@@ -37,7 +37,11 @@ NICE TO HAVE: (ONLY IF WE IMPLEMENT SKILLS):
 
 
 
-
+MAP: 
+random generated
+array generation with constraints
+put values into the array
+genreate textures according to the array
 
 
 
