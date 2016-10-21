@@ -3,6 +3,10 @@
 
 ## Add new image
 
+>__Warning!__
+
+>__Fonts should be loaded through the content manager!__
+
 1. Copy your image to the folder Content
 2. Create an XML file in the folder Load
 3. The xml file should contain:
