@@ -16,7 +16,8 @@ namespace EternalEvolution
         public string Text, FontName, Path;
         public Vector2 Position, Scale;
         public Rectangle SourceRect;
-
+        Dictionary<string, ImageEffect> effectList;
+        public string Effects;
         // Texture2D cannot be serialized!
         [XmlIgnore]
         public Texture2D Texture;
@@ -24,15 +25,52 @@ namespace EternalEvolution
         ContentManager content;
         RenderTarget2D renderTarget;
         SpriteFont font;
+        public bool IsActive;
+
+        public FadeEffect FadeEffect;
 
         public Image()
         {
-            Path = Text = String.Empty;
+            Path = Text = Effects = String.Empty;
             FontName = "defaultfont";
             Position = Vector2.Zero;
             Scale = Vector2.One;
             Alpha = 1.0f;
             SourceRect = Rectangle.Empty;
+            effectList = new Dictionary<string, ImageEffect>();
+        }
+
+        void SetEffect<T>(ref T effect)
+        {
+            if (effect == null)
+                effect = (T)Activator.CreateInstance(typeof(T));
+            else
+            {
+                (effect as ImageEffect).isActive = true;
+                var obj = this;
+                (effect as ImageEffect).LoadContent(ref obj);
+            }
+
+            effectList.Add(effect.GetType().ToString().Replace("EternalEvolution.",""),(effect as ImageEffect));
+        }
+
+        public void ActivateEffect(string effect)
+        {
+            if (effectList.ContainsKey(effect))
+            {
+                effectList[effect].isActive = true;
+                var obj = this;
+                effectList[effect].LoadContent(ref obj);
+            }
+        }
+
+        public void DeactivateEffect(string effect)
+        {
+            if (effectList.ContainsKey(effect))
+            {
+                effectList[effect].isActive = false;
+                effectList[effect].UnloadContent();
+            }
         }
 
         public void LoadContent()
@@ -76,16 +114,35 @@ namespace EternalEvolution
             ScreenManager.Instance.SpriteBatch.End();
             Texture = renderTarget;
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(null);
+            SetEffect<FadeEffect>(ref FadeEffect);
+            if(Effects != String.Empty)
+            {
+                string[] split = Effects.Split(':');
+                foreach(string item in split)
+                {
+                    ActivateEffect(item);
+                }
+            }
         }
 
         public void UnloadContent()
         {
             content.Unload();
+            foreach(var effect in effectList)
+            {
+                DeactivateEffect(effect.Key);
+            }
         }
 
         public void Update(GameTime gameTime)
         {
-
+            foreach(var effect in effectList)
+            {
+                if (effect.Value.isActive)
+                {
+                    effect.Value.Update(gameTime);
+                }
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
