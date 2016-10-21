@@ -14,12 +14,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <SplashScreen>
   <Image>
+    <!-- Path to the image -->
     <Path>splashscreen/lazypandastudios</Path>
+
+    <!-- Effects -->
+    <Effects>FadeEffect</Effects>
+    <IsActive>true</IsActive>
+    
+    <!-- Position -->
     <Position>
       <X>200</X>
       <Y>100</Y>
     </Position>
+
+    <!-- Alpha = Transparency -->
     <Alpha>1.0</Alpha>
+    
+    <!-- Scale -->
     <Scale>
       <X>4.0</X>
       <Y>4.0</Y>
