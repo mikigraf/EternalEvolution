@@ -23,3 +23,4 @@ C:\Users\spejss\Documents\GitHub\EternalEvolution\game\EternalEvolution\EternalE
 C:\Users\spejss\Documents\GitHub\EternalEvolution\game\EternalEvolution\EternalEvolution\obj\x86\Debug\EternalEvolution.csprojResolveAssemblyReference.cache
 C:\Users\spejss\Documents\GitHub\EternalEvolution\game\EternalEvolution\EternalEvolution\obj\x86\Debug\EternalEvolution.exe
 C:\Users\spejss\Documents\GitHub\EternalEvolution\game\EternalEvolution\EternalEvolution\obj\x86\Debug\EternalEvolution.pdb
+C:\Users\spejss\Documents\GitHub\EternalEvolution\game\EternalEvolution\EternalEvolution\bin\Windows\x86\Debug\Content\por.xnb
