@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\splashscreen\lazypandastudios.png" />
     <Content Include="Content\splashscreen\por.jpg" />
     <Content Include="Icon.ico" />
     <Content Include="Load\SplashScreen.xml" />
