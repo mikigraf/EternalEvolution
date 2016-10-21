@@ -18,11 +18,16 @@ namespace EternalEvolution
             private set; get;
         }
         GameScreen currentScreen;
+        XmlManager<GameScreen> xmlGameScreenManager;
 
         public ScreenManager()
         {
             Dimensions = new Vector2(640, 480);
             currentScreen = new SplashScreen();
+            xmlGameScreenManager = new XmlManager<GameScreen>();
+            xmlGameScreenManager.Type = currentScreen.Type;
+            currentScreen = xmlGameScreenManager.Load("Load/SplashScreen.xml");
+            
          }
         public static ScreenManager Instance
         {

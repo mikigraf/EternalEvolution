@@ -9,17 +9,21 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace EternalEvolution
 {
-    class SplashScreen : GameScreen
+    public class SplashScreen : GameScreen
     {
         Texture2D image;
-        string path;
+        public string Path;
+
+        public SplashScreen()
+        {
+
+        }
 
         public override void LoadContent()
         {
             base.LoadContent();
             this.Content = new ContentManager(ScreenManager.Instance.Content.ServiceProvider, "Content");
-            path = "splashscreen/image";
-            image = Content.Load<Texture2D>("por");
+            image = Content.Load<Texture2D>(Path);
         }
 
         public override void UnloadContent()

@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using System.Xml.Serialization;
 
 namespace EternalEvolution
 {
-    class GameScreen
+    public class GameScreen
     {
-        protected ContentManager Content; 
+        protected ContentManager Content;
+        [XmlIgnore]
+        public Type Type;
+
+        public GameScreen()
+        {
+            Type = this.GetType();
+        }
 
         public virtual void LoadContent()
         {
