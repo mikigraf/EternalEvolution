@@ -1,12 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <SplashScreen>
   <Image>
-    
+    <Path>splashscreen/lazypandastudios</Path>
+    <Position>
+      <X>200</X>
+      <Y>100</Y>
+    </Position>
+    <Alpha>1.0</Alpha>
+    <Scale>
+      <X>4.0</X>
+      <Y>4.0</Y>
+    </Scale>
   </Image>
-  <Path>splashscreen/lazypandastudios</Path>
-  <Path>splashscreen/por</Path>
-  <Position>
-    <X>200</X>
-    <Y>100</Y>
-  </Position>
 </SplashScreen>

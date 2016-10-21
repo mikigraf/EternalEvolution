@@ -10,16 +10,9 @@ using System.Xml.Serialization;
 
 namespace EternalEvolution
 {
-    public class Image
-    {
-        public string Path;
-    }
-
     public class SplashScreen : GameScreen
     {
-        Texture2D image;
         public Image Image;
-        public Vector2 Position;
 
         public SplashScreen()
         {
@@ -29,23 +22,25 @@ namespace EternalEvolution
         public override void LoadContent()
         {
             base.LoadContent();
-            this.Content = new ContentManager(ScreenManager.Instance.Content.ServiceProvider, "Content");
-            image = Content.Load<Texture2D>(path[0]);
+            Image.LoadContent();
+
         }
 
         public override void UnloadContent()
         {
             base.UnloadContent();
+            Image.UnloadContent();
         }
 
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
+            Image.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(image, Position, Color.White);
+            Image.Draw(spriteBatch);
             //base.Draw(spriteBatch);
         }
     }

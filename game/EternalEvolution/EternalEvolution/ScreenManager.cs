@@ -19,6 +19,8 @@ namespace EternalEvolution
         }
         GameScreen currentScreen;
         XmlManager<GameScreen> xmlGameScreenManager;
+        public GraphicsDevice GraphicsDevice;
+        public SpriteBatch SpriteBatch ;
 
         public ScreenManager()
         {
