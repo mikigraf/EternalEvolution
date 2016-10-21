@@ -15,10 +15,12 @@ namespace EternalEvolution
         protected ContentManager Content;
         [XmlIgnore]
         public Type Type;
+        public string XmlPath;
 
         public GameScreen()
         {
             Type = this.GetType();
+            XmlPath = "Load/" + Type.ToString().Replace("EternalEvolution.", "") + ".xml";
         }
 
         public virtual void LoadContent()

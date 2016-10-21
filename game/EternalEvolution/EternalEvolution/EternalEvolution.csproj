@@ -60,14 +60,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ScreenManager\FadeImage.png" />
     <Content Include="Content\splashscreen\lazypandastudios.png" />
     <Content Include="Content\splashscreen\por.jpg" />
     <Content Include="Icon.ico" />
+    <Content Include="Load\ScreenManager.xml" />
     <Content Include="Load\SplashScreen.xml" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

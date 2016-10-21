@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System.Xml.Serialization;
+using Microsoft.Xna.Framework.Input;
 
 namespace EternalEvolution
 {
@@ -36,6 +37,10 @@ namespace EternalEvolution
         {
             base.Update(gameTime);
             Image.Update(gameTime);
+            if(Keyboard.GetState().IsKeyDown(Keys.Enter) && !ScreenManager.Instance.isTransitioning)
+            {
+                ScreenManager.Instance.ChangeScreens("SplashScreen");
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)

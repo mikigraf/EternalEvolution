@@ -12,7 +12,7 @@ namespace EternalEvolution
         public bool isActive; 
 
         public ImageEffect()
-        {
+        { 
             isActive = false;
         }
 

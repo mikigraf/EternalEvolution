@@ -7,6 +7,9 @@
     <!-- Effects -->
     <Effects>FadeEffect</Effects>
     <IsActive>true</IsActive>
+    <FadeEffect>
+      <FadeSpeed>0.2</FadeSpeed>
+    </FadeEffect>
     
     <!-- Position -->
     <Position>
