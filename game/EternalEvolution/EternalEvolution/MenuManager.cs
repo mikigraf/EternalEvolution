@@ -32,6 +32,10 @@ namespace EternalEvolution
                     }else if(first == 1.0f && last == 1.0f)
                     {
                         isTransitioning = false;
+                        foreach(MenuItem item in menu.Items)
+                        {
+                            item.Image.RestoreEffects();
+                        }
                     }
 
                 }
@@ -53,6 +57,11 @@ namespace EternalEvolution
             menu.LoadContent();
             menu.OnMenuChange += Menu_OnMenuChange;
             menu.Transition(0.0f);
+            foreach (MenuItem item in menu.Items)
+            {
+                item.Image.StoreEffects();
+                item.Image.ActivateEffect("FadeEffect");
+            }
         }
 
         public void LoadContent(string menuPath)
@@ -85,6 +94,11 @@ namespace EternalEvolution
                 {
                     isTransitioning = true;
                     menu.Transition(1.0f);
+                    foreach(MenuItem item in menu.Items)
+                    {
+                        item.Image.StoreEffects();
+                        item.Image.ActivateEffect("FadeEffect");
+                    }
                 }
             }
             Transition(gameTime);
