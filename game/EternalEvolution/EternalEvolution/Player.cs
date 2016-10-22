@@ -33,15 +33,18 @@ namespace EternalEvolution
 
         public void Update(GameTime gameTime)
         {
+            Image.IsActive = true;
             if(Velocity.X == 0)
             {
                 if (InputManager.Instance.KeyDown(Keys.Down) || InputManager.Instance.KeyDown(Keys.S))
                 {
                     Velocity.Y = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    Image.SpriteSheetEffect.CurrentFrame.Y = 0;
                 }
                 else if (InputManager.Instance.KeyDown(Keys.Up) || InputManager.Instance.KeyDown(Keys.W))
                 {
                     Velocity.Y = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    Image.SpriteSheetEffect.CurrentFrame.Y = 1;
                 }
                 else
                 {
@@ -54,10 +57,12 @@ namespace EternalEvolution
                 if (InputManager.Instance.KeyDown(Keys.Right) || InputManager.Instance.KeyDown(Keys.D))
                 {
                     Velocity.X = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    Image.SpriteSheetEffect.CurrentFrame.Y = 3;
                 }
                 else if (InputManager.Instance.KeyDown(Keys.Left) || InputManager.Instance.KeyDown(Keys.A))
                 {
                     Velocity.X = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    Image.SpriteSheetEffect.CurrentFrame.Y = 2;
                 }
                 else
                 {
@@ -65,6 +70,8 @@ namespace EternalEvolution
                 }
             }
 
+
+            Image.Update(gameTime);
             Image.Position += Velocity;
         }
 

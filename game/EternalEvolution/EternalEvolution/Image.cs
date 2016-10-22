@@ -28,6 +28,7 @@ namespace EternalEvolution
         public bool IsActive;
 
         public FadeEffect FadeEffect;
+        public SpriteSheetEffect SpriteSheetEffect;
 
         public Image()
         {
@@ -138,6 +139,7 @@ namespace EternalEvolution
             Texture = renderTarget;
             ScreenManager.Instance.GraphicsDevice.SetRenderTarget(null);
             SetEffect<FadeEffect>(ref FadeEffect);
+            SetEffect<SpriteSheetEffect>(ref SpriteSheetEffect);
             if(Effects != String.Empty)
             {
                 string[] split = Effects.Split(':');
