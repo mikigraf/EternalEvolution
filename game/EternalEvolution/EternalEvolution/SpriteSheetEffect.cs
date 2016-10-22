@@ -42,7 +42,7 @@ namespace EternalEvolution
         {
             AmountOfFrames = new Vector2(4, 4);
             CurrentFrame = new Vector2(1, 0);
-            SwitchFrame = 100;
+            SwitchFrame = 25;
             FrameCounter = 0;
         }
 
@@ -71,7 +71,7 @@ namespace EternalEvolution
                         CurrentFrame.X = 0;
                     }
                 }
-            }else
+            }else if(!image.IsActive)
             {
                 CurrentFrame.X = 1;
             }

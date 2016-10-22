@@ -4,5 +4,5 @@
     <Path>player</Path>
     <Effects>SpriteSheetEffect</Effects>
   </Image>
-  <MoveSpeed>1000</MoveSpeed>
+  <MoveSpeed>500</MoveSpeed>
 </Player>
