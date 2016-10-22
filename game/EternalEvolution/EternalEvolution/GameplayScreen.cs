@@ -43,8 +43,9 @@ namespace EternalEvolution
         {
             base.Draw(spriteBatch);
             // Order to the layers. Player gets drawn on top of the map, not otherwise.
-            map.Draw(spriteBatch);
+            map.Draw(spriteBatch,"Underlay");
             player.Draw(spriteBatch);
+            map.Draw(spriteBatch, "Overlay");
         }
     }
 }
