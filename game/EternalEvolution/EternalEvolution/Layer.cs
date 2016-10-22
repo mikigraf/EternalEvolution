@@ -25,11 +25,14 @@ namespace EternalEvolution
         public TileMap Tile;
         public Image Image;
         List<Tile> tiles;
+        public string SolidTiles;
+        string state;
 
         public Layer()
         {
             Image = new Image();
             tiles = new List<Tile>();
+            SolidTiles = String.Empty;
         }
 
         public void LoadContent(Vector2 tileDimensions)
@@ -47,12 +50,20 @@ namespace EternalEvolution
                     if(s != String.Empty)
                     {
                         position.X += tileDimensions.X;
-                        tiles.Add(new EternalEvolution.Tile());
-                        string str = s.Replace("[", String.Empty);
-                        int value1 = int.Parse(str.Substring(0,str.IndexOf(':')));
-                        int value2 = int.Parse(str.Substring(str.IndexOf(':') + 1));
+                        if (!s.Contains("x"))
+                        {
+                            state = "Passive";
+                            tiles.Add(new EternalEvolution.Tile());
+                            string str = s.Replace("[", String.Empty);
+                            int value1 = int.Parse(str.Substring(0, str.IndexOf(':')));
+                            int value2 = int.Parse(str.Substring(str.IndexOf(':') + 1));
+                            if(SolidTiles.Contains("[" + value1.ToString() + ":" + value2.ToString() + "]"))
+                            {
+                                state = "Solid";
+                            }
+                            tiles[tiles.Count - 1].LoadContent(position, new Rectangle(value1 * (int)tileDimensions.X, value2 * (int)tileDimensions.Y, (int)tileDimensions.X, (int)tileDimensions.Y), state);
 
-                        tiles[tiles.Count - 1].LoadContent(position,new Rectangle(value1 * (int) tileDimensions.X, value2 * (int) tileDimensions.Y, (int) tileDimensions.X, (int) tileDimensions.Y));
+                        }
 
                     }
                 }
@@ -64,9 +75,12 @@ namespace EternalEvolution
             Image.UnloadContent();
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, ref Player player)
         {
-
+            foreach(Tile tile in tiles)
+            {
+                tile.Update(gameTime, ref player);
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
