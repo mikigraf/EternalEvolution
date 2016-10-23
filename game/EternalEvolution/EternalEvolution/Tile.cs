@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace EternalEvolution
@@ -14,6 +9,7 @@ namespace EternalEvolution
         Vector2 position;
         Rectangle sourceRect;
         string state;
+
         public Rectangle SourceRect
         {
             get
@@ -44,13 +40,14 @@ namespace EternalEvolution
 
         public void Update(GameTime gameTime, ref Player player)
         {
-            if(state == "Solid")
+            if (state == "Solid")
             {
                 Rectangle tileRect = new Rectangle((int)Position.X, (int)Position.Y, sourceRect.Width, sourceRect.Height);
                 Rectangle playerRect = new Rectangle((int)player.Image.Position.X, (int)player.Image.Position.Y, (int)player.Image.SourceRect.Width, (int)player.Image.SourceRect.Height);
-
+                
                 if (playerRect.Intersects(tileRect))
                 {
+                    
                     if(player.Velocity.X < 0)
                     {
                         player.Image.Position.X = tileRect.Right;

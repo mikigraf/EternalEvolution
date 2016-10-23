@@ -24,7 +24,7 @@ namespace EternalEvolution
         [XmlElement("TileMap")]
         public TileMap Tile;
         public Image Image;
-        List<Tile> underlayTiles, overlayTiles;
+        List<Tile> underlayTiles, overlayTiles,mobs;
         public string SolidTiles, OverlayTiles;
         string state;
 
