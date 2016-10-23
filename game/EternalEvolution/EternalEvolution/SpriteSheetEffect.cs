@@ -42,7 +42,7 @@ namespace EternalEvolution
         {
             AmountOfFrames = new Vector2(4, 4);
             CurrentFrame = new Vector2(1, 0);
-            SwitchFrame = 100;
+            SwitchFrame = 2;
             FrameCounter = 0;
         }
 
