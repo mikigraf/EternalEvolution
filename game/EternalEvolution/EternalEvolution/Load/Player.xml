@@ -3,7 +3,6 @@
   <Image>
     <Path>player</Path>
     <Effects>SpriteSheetEffect</Effects>
-
   </Image>
   <MoveSpeed>1000</MoveSpeed>
 </Player>
