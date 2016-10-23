@@ -14,12 +14,13 @@ namespace EternalEvolution
         Player player;
         Map map;
         private SpriteFont font;
+        XmlManager<Map> mapLoader;
 
         public override void LoadContent()
         {
             base.LoadContent();
             XmlManager<Player> playerLoader = new XmlManager<Player>();
-            XmlManager<Map> mapLoader = new XmlManager<Map>();
+            mapLoader = new XmlManager<Map>();
             player = playerLoader.Load("Load/Player.xml");
             map = mapLoader.Load("Load/Map.xml");
             player.LoadContent();
@@ -39,6 +40,16 @@ namespace EternalEvolution
             base.Update(gameTime);
             player.Update(gameTime);
             map.Update(gameTime, ref player);
+            /* SHOWCASE FOR LEVEL LOADING.
+            if (player.Image.Position.X > 100)
+            {
+                map = mapLoader.Load("Load/Map2.xml");
+                map.LoadContent();
+            }else if(player.Image.Position.X < 100)
+            {
+                map = mapLoader.Load("Load/Map.xml");
+                map.LoadContent();
+            } */
         }
 
         public override void Draw(SpriteBatch spriteBatch)
