@@ -38,12 +38,13 @@ namespace EternalEvolution
 
         }
 
-        public void Update(GameTime gameTime, ref Player player)
+        public void Update(GameTime gameTime, ref Player player, ref Mob mob)
         {
             if (state == "Solid")
             {
                 Rectangle tileRect = new Rectangle((int)Position.X, (int)Position.Y, sourceRect.Width, sourceRect.Height);
                 Rectangle playerRect = new Rectangle((int)player.Image.Position.X, (int)player.Image.Position.Y, (int)player.Image.SourceRect.Width, (int)player.Image.SourceRect.Height);
+                Rectangle mobRect = new Rectangle((int)mob.Image.Position.X, (int)mob.Image.Position.Y, (int)mob.Image.SourceRect.Width, (int)mob.Image.SourceRect.Height);
                 
                 if (playerRect.Intersects(tileRect))
                 {
@@ -63,6 +64,29 @@ namespace EternalEvolution
                     }
 
                     player.Velocity = Vector2.Zero;
+                }
+
+                if (mobRect.Intersects(tileRect))
+                {
+
+                    if (mob.Velocity.X < 0)
+                    {
+                        mob.Image.Position.X = tileRect.Right;
+                    }
+                    else if (mob.Velocity.X > 0)
+                    {
+                        mob.Image.Position.X = tileRect.Left - mob.Image.SourceRect.Width;
+                    }
+                    else if (mob.Velocity.Y < 0)
+                    {
+                        mob.Image.Position.Y = tileRect.Bottom;
+                    }
+                    else
+                    {
+                        mob.Image.Position.Y = tileRect.Top - mob.Image.SourceRect.Height;
+                    }
+
+                    mob.Velocity = Vector2.Zero;
                 }
             }
         }

@@ -38,11 +38,11 @@ namespace EternalEvolution
             }
         }
 
-        public void Update(GameTime gameTime, ref Player player)
+        public void Update(GameTime gameTime, ref Player player, ref Mob mob)
         {
             foreach (Layer l in Layer)
             {
-                l.Update(gameTime, ref player);
+                l.Update(gameTime, ref player, ref mob);
             }
 
         }

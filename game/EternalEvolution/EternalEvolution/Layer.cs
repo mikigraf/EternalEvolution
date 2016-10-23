@@ -80,15 +80,15 @@ namespace EternalEvolution
             Image.UnloadContent();
         }
 
-        public void Update(GameTime gameTime, ref Player player)
+        public void Update(GameTime gameTime, ref Player player, ref Mob mob)
         {
             foreach(Tile tile in underlayTiles)
             {
-                tile.Update(gameTime, ref player);
+                tile.Update(gameTime, ref player, ref mob);
             }
             foreach (Tile tile in overlayTiles)
             {
-                tile.Update(gameTime, ref player);
+                tile.Update(gameTime, ref player, ref mob);
             }
         }
 

@@ -41,6 +41,7 @@
     <StartupObject>EternalEvolution.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Entity.cs" />
     <Compile Include="FadeEffect.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameplayScreen.cs" />
@@ -53,6 +54,8 @@
     <Compile Include="Menu.cs" />
     <Compile Include="MenuItem.cs" />
     <Compile Include="MenuManager.cs" />
+    <Compile Include="Mob.cs" />
+    <Compile Include="NPC.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +95,7 @@
     <Folder Include="Content\Menu\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Content\NewSpriteFont.spritefont" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
