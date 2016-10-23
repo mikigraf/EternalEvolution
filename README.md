@@ -40,4 +40,6 @@
 ```
 *For reference on what can be specified in this XML file see the* **Image class** 
 
+Menu screens, player properties and other properties should be specified in xml files.
+
 
