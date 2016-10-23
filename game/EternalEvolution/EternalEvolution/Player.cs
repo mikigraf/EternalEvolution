@@ -44,7 +44,7 @@ namespace EternalEvolution
                 else if (InputManager.Instance.KeyDown(Keys.Up) || InputManager.Instance.KeyDown(Keys.W))
                 {
                     Velocity.Y = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    Image.SpriteSheetEffect.CurrentFrame.Y = 1;
+                    Image.SpriteSheetEffect.CurrentFrame.Y = 3;
                 }
                 else
                 {
@@ -57,12 +57,12 @@ namespace EternalEvolution
                 if (InputManager.Instance.KeyDown(Keys.Right) || InputManager.Instance.KeyDown(Keys.D))
                 {
                     Velocity.X = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    Image.SpriteSheetEffect.CurrentFrame.Y = 3;
+                    Image.SpriteSheetEffect.CurrentFrame.Y = 2;
                 }
                 else if (InputManager.Instance.KeyDown(Keys.Left) || InputManager.Instance.KeyDown(Keys.A))
                 {
                     Velocity.X = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    Image.SpriteSheetEffect.CurrentFrame.Y = 2;
+                    Image.SpriteSheetEffect.CurrentFrame.Y = 1;
                 }
                 else
                 {
