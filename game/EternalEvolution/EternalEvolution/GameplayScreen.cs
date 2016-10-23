@@ -13,6 +13,7 @@ namespace EternalEvolution
     {
         Player player;
         Map map;
+        private SpriteFont font;
 
         public override void LoadContent()
         {
@@ -23,6 +24,7 @@ namespace EternalEvolution
             map = mapLoader.Load("Load/Map.xml");
             player.LoadContent();
             map.LoadContent();
+            font = Content.Load<SpriteFont>("NewSpriteFont");
         }
 
         public override void UnloadContent()
@@ -46,6 +48,7 @@ namespace EternalEvolution
             map.Draw(spriteBatch,"Underlay");
             player.Draw(spriteBatch);
             map.Draw(spriteBatch, "Overlay");
+            spriteBatch.DrawString(font, "HP: " + player.HP, new Vector2(200, 200), Color.Yellow);
         }
     }
 }

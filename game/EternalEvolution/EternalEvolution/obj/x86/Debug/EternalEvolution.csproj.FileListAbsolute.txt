@@ -25,3 +25,4 @@ C:\Users\spejss\Documents\GitHub\EternalEvolution\game\EternalEvolution\EternalE
 C:\Users\spejss\Documents\GitHub\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.RawInput.xml
 C:\Users\spejss\Documents\GitHub\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.Direct3D9.xml
 C:\Users\spejss\Documents\GitHub\EternalEvolution\game\EternalEvolution\EternalEvolution\Content\defaultfont.xnb
+C:\Users\spejss\Documents\GitHub\EternalEvolution\game\EternalEvolution\EternalEvolution\Content\NewSpriteFont.xnb

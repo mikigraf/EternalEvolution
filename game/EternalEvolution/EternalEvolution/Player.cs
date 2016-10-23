@@ -15,10 +15,12 @@ namespace EternalEvolution
         public Image Image;
         public Vector2 Velocity;
         public float MoveSpeed;
+        public int HP;
 
         public Player()
         {
             Velocity = Vector2.Zero;
+            HP = 99;
         }
 
         public void LoadContent()
