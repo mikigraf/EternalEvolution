@@ -40,7 +40,7 @@ namespace EternalEvolution
             }
             else
             {
-                direction = TurnLeft(direction, gameTime);
+                direction = TurnRight(direction, gameTime);
                 count = 0;
             }
 

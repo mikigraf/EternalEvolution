@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/GitDateien/EternalEvolution/game/EternalEvolution/EternalEvolution/Content/defaultfont.spritefont</SourceFile>
-  <SourceTime>2016-10-23T15:48:23.5273779+02:00</SourceTime>
-  <DestFile>D:/GitDateien/EternalEvolution/game/EternalEvolution/EternalEvolution/Content/bin/Windows/defaultfont.xnb</DestFile>
-  <DestTime>2016-10-23T15:50:36.4950806+02:00</DestTime>
+  <SourceFile>C:/Users/Johannes Teklote/Documents/Uni Projekte/Seminar Computerspiele/EternalEvolution/game/EternalEvolution/EternalEvolution/Content/defaultfont.spritefont</SourceFile>
+  <SourceTime>2016-10-24T12:05:18.2773323+02:00</SourceTime>
+  <DestFile>C:/Users/Johannes Teklote/Documents/Uni Projekte/Seminar Computerspiele/EternalEvolution/game/EternalEvolution/EternalEvolution/Content/bin/Windows/defaultfont.xnb</DestFile>
+  <DestTime>2016-10-24T12:06:01.8321433+02:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2016-03-30T08:36:08+02:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

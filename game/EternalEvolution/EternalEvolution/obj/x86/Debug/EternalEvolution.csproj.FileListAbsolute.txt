@@ -54,3 +54,31 @@ D:\GitDateien\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.Di
 D:\GitDateien\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.XInput.xml
 D:\GitDateien\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.RawInput.xml
 D:\GitDateien\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.Direct3D9.xml
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\obj\x86\Debug\EternalEvolution.exe
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\obj\x86\Debug\EternalEvolution.pdb
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\obj\x86\Debug\EternalEvolution.csprojResolveAssemblyReference.cache
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\Content\defaultfont.xnb
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\Content\NewSpriteFont.xnb
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\Content\por.xnb
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\EternalEvolution.exe
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\EternalEvolution.pdb
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\MonoGame.Framework.dll
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.MediaFoundation.dll
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.dll
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.XAudio2.dll
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.DXGI.dll
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.Direct3D11.dll
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.Direct2D1.dll
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.XInput.dll
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.RawInput.dll
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.Direct3D9.dll
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\MonoGame.Framework.xml
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.MediaFoundation.xml
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.xml
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.XAudio2.xml
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.DXGI.xml
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.Direct3D11.xml
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.Direct2D1.xml
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.XInput.xml
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.RawInput.xml
+C:\Users\Johannes Teklote\Documents\Uni Projekte\Seminar Computerspiele\EternalEvolution\game\EternalEvolution\EternalEvolution\SharpDX.Direct3D9.xml
