@@ -11,17 +11,20 @@ namespace EternalEvolution
 {
     public class Mob : Entity
     {
-        public Image Image;
-        public Vector2 Velocity;
-        public float MoveSpeed;
-        public int HP;
         int count = 0;
+        int attackCount = 0;
         char direction = 'd';
-
+        bool attacking = false;
+        public bool playerInRange = false;
+        public Rectangle agroBox;
+        public int victimX;
+        public int victimY;
+        
 
         public void LoadContent()
         {
-            Image.LoadContent();
+            base.LoadContent();
+            agroBox = new Rectangle((int)Image.Position.X - 200, (int)Image.Position.Y - 200, (int)Image.SourceRect.Width + 200, (int)Image.SourceRect.Height + 200);
         }
 
         public void UnloadContent()
@@ -33,15 +36,13 @@ namespace EternalEvolution
         {
             Image.IsActive = true;
             
-            if (count <= 50)
+            if (playerInRange)
             {
-                Move(direction, gameTime);
-                count++;
+                ToAttack(gameTime);
             }
             else
             {
-                direction = TurnLeft(direction, gameTime);
-                count = 0;
+                Patrol(gameTime);
             }
 
             if (Velocity.X == 0 && Velocity.Y == 0)
@@ -51,6 +52,10 @@ namespace EternalEvolution
 
             Image.Update(gameTime);
             Image.Position += Velocity;
+            hitBox = new Rectangle((int)Image.Position.X, (int)Image.Position.Y, (int)Image.SourceRect.Width, (int)Image.SourceRect.Height);
+            agroBox = new Rectangle((int)Image.Position.X - 200, (int)Image.Position.Y - 200, (int)Image.SourceRect.Width + 200, (int)Image.SourceRect.Height + 200);
+            center.X = hitBox.X + Image.SourceRect.Width / 2;
+            center.Y = hitBox.Y + Image.SourceRect.Height / 2;
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -60,6 +65,9 @@ namespace EternalEvolution
 
         private char TurnRight(char direction, GameTime gameTime)
         {
+            Velocity.X = 0;
+            Velocity.Y = 0;
+
             if (direction.Equals('d'))
             {
                 return 's';
@@ -81,6 +89,9 @@ namespace EternalEvolution
 
         private char TurnLeft(char direction, GameTime gameTime)
         {
+            Velocity.X = 0;
+            Velocity.Y = 0;
+
             if (direction.Equals('d'))
             {
                 return 'w';
@@ -122,6 +133,91 @@ namespace EternalEvolution
             {
                 Velocity.Y = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                 Image.SpriteSheetEffect.CurrentFrame.Y = 3;
+            }
+        }
+
+        private void Patrol(GameTime gameTime)
+        {
+            if (count <= 50)
+            {
+                Move(direction, gameTime);
+                count++;
+            }
+            else
+            {
+                direction = TurnRight(direction, gameTime);
+                count = 0;
+            }
+        }
+
+        private void ToAttack(GameTime gameTime)
+        {
+            Velocity.X = 0;
+            Velocity.Y = 0;
+
+            Random rnd = new Random();
+            int rndNum = rnd.Next(0, 100);
+
+            if (rndNum % 2 == 0)
+            {
+                if (victimX < hitBox.X)
+                {
+                    direction = 'a';
+                }
+                else if (victimX > hitBox.X + hitBox.Width)
+                {
+                    direction = 'd';
+                }
+                else if (victimX >= hitBox.X && victimX <= hitBox.X + hitBox.Width)
+                {
+                    if (victimY < hitBox.Y)
+                    {
+                        direction = 'w';
+                    }
+                    else if (victimY > hitBox.Y + hitBox.Y + hitBox.Height)
+                    {
+                        direction = 's';
+                    }
+                    else if (victimY >= hitBox.Y && victimY <= hitBox.Y + hitBox.Height)
+                    {
+                        attacking = true;
+                    }
+                }
+            }
+            else
+            {
+                if (victimY < hitBox.Y)
+                {
+                    direction = 'w';
+                }
+                else if (victimY > hitBox.Y + hitBox.Height)
+                {
+                    direction = 's';
+                }
+                else if (victimY >= hitBox.Y && victimY <= hitBox.Y + hitBox.Height)
+                {
+                    if (victimX < hitBox.X)
+                    {
+                        direction = 'a';
+                    }
+                    else if (victimX > hitBox.X + hitBox.X + hitBox.Width)
+                    {
+                        direction = 'd';
+                    }
+                    else if (victimX >= hitBox.X && victimX <= hitBox.X + hitBox.Width)
+                    {
+                        attacking = true;
+                    }
+                }
+            }
+
+            if (attacking)
+            {
+                attacking = false;
+            }
+            else
+            {
+                Move(direction, gameTime);
             }
         }
     }

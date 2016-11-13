@@ -15,11 +15,15 @@ namespace EternalEvolution
         public Vector2 Velocity;
         public float MoveSpeed;
         public int HP;
+        public Rectangle hitBox;
+        public Vector2 center;
 
         public void LoadContent()
         {
-            
             Image.LoadContent();
+            hitBox = new Rectangle((int)Image.Position.X, (int)Image.Position.Y, (int)Image.SourceRect.Width, (int)Image.SourceRect.Height);
+            center.X = hitBox.X + Image.SourceRect.Width / 2;
+            center.Y = hitBox.Y + Image.SourceRect.Height / 2;
         }
 
         public void UnloadContent()

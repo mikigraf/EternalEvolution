@@ -22,6 +22,7 @@ namespace EternalEvolution
             XmlManager<Player> playerLoader = new XmlManager<Player>();
             XmlManager<Map> mapLoader = new XmlManager<Map>();
             XmlManager<Mob> mobLoader = new XmlManager<Mob>();
+            mobs = new List<Mob>();
             player = playerLoader.Load("Load/Player.xml");
             map = mapLoader.Load("Load/Map.xml");
             player.LoadContent();
@@ -30,8 +31,8 @@ namespace EternalEvolution
             for (int i = 0; i < 5; i++)
             {
                 Mob mob = mobLoader.Load("Load/Mob.xml");
-                mob.Image.Position.X = 150 + (i * 10);
-                mob.Image.Position.Y = 150 + (i * 10);
+                mob.Image.Position.X = 100 + (i * 100);
+                mob.Image.Position.Y = 180;
                 mob.LoadContent();
                 mobs.Add(mob);
             }

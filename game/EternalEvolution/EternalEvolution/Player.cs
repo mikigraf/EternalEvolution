@@ -12,11 +12,6 @@ namespace EternalEvolution
 {
     public class Player : Entity
     {
-        public Image Image;
-        public Vector2 Velocity;
-        public float MoveSpeed;
-        public int HP;
-
         public Player()
         {
             Velocity = Vector2.Zero;
@@ -25,7 +20,7 @@ namespace EternalEvolution
 
         public void LoadContent()
         {
-            Image.LoadContent();
+            base.LoadContent();
         }
 
         public void UnloadContent()
@@ -36,6 +31,15 @@ namespace EternalEvolution
         public void Update(GameTime gameTime)
         {
             Image.IsActive = true;
+
+            if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
+            {
+                MoveSpeed = 200;
+            } else
+            {
+                MoveSpeed = 100;
+            }
+
             if (Velocity.X == 0)
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.Down) || Keyboard.GetState().IsKeyDown(Keys.S))
@@ -79,6 +83,9 @@ namespace EternalEvolution
 
             Image.Update(gameTime);
             Image.Position += Velocity;
+            hitBox = new Rectangle((int)Image.Position.X, (int)Image.Position.Y, (int)Image.SourceRect.Width, (int)Image.SourceRect.Height);
+            center.X = hitBox.X + Image.SourceRect.Width / 2;
+            center.Y = hitBox.Y + Image.SourceRect.Height / 2;
         }
 
         public void Draw(SpriteBatch spriteBatch)
