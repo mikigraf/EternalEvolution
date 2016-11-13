@@ -24,7 +24,7 @@ namespace EternalEvolution
         [XmlElement("TileMap")]
         public TileMap Tile;
         public Image Image;
-        List<Tile> underlayTiles, overlayTiles,mobs;
+        List<Tile> underlayTiles, overlayTiles;
         public string SolidTiles, OverlayTiles;
         string state;
 
@@ -80,15 +80,15 @@ namespace EternalEvolution
             Image.UnloadContent();
         }
 
-        public void Update(GameTime gameTime, ref Player player)
+        public void Update(GameTime gameTime, ref Player player, ref List<Mob> mobs)
         {
             foreach(Tile tile in underlayTiles)
             {
-                tile.Update(gameTime, ref player);
+                tile.Update(gameTime, ref player, ref mobs);
             }
             foreach (Tile tile in overlayTiles)
             {
-                tile.Update(gameTime, ref player);
+                tile.Update(gameTime, ref player, ref mobs);
             }
         }
 

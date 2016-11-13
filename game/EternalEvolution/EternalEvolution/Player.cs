@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace EternalEvolution
 {
-    public class Player
+    public class Player : Entity
     {
         public Image Image;
         public Vector2 Velocity;
@@ -36,14 +36,14 @@ namespace EternalEvolution
         public void Update(GameTime gameTime)
         {
             Image.IsActive = true;
-            if(Velocity.X == 0)
+            if (Velocity.X == 0)
             {
-                if (InputManager.Instance.KeyDown(Keys.Down) || InputManager.Instance.KeyDown(Keys.S))
+                if (Keyboard.GetState().IsKeyDown(Keys.Down) || Keyboard.GetState().IsKeyDown(Keys.S))
                 {
                     Velocity.Y = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                     Image.SpriteSheetEffect.CurrentFrame.Y = 0;
                 }
-                else if (InputManager.Instance.KeyDown(Keys.Up) || InputManager.Instance.KeyDown(Keys.W))
+                else if (Keyboard.GetState().IsKeyDown(Keys.Up) || Keyboard.GetState().IsKeyDown(Keys.W))
                 {
                     Velocity.Y = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                     Image.SpriteSheetEffect.CurrentFrame.Y = 3;
@@ -54,14 +54,14 @@ namespace EternalEvolution
                 }
             }
 
-            if(Velocity.Y == 0)
+            if (Velocity.Y == 0)
             {
-                if (InputManager.Instance.KeyDown(Keys.Right) || InputManager.Instance.KeyDown(Keys.D))
+                if (Keyboard.GetState().IsKeyDown(Keys.Right) || Keyboard.GetState().IsKeyDown(Keys.D))
                 {
                     Velocity.X = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                     Image.SpriteSheetEffect.CurrentFrame.Y = 2;
                 }
-                else if (InputManager.Instance.KeyDown(Keys.Left) || InputManager.Instance.KeyDown(Keys.A))
+                else if (Keyboard.GetState().IsKeyDown(Keys.Left) || Keyboard.GetState().IsKeyDown(Keys.A))
                 {
                     Velocity.X = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
                     Image.SpriteSheetEffect.CurrentFrame.Y = 1;
@@ -72,7 +72,7 @@ namespace EternalEvolution
                 }
             }
 
-            if(Velocity.X == 0 && Velocity.Y == 0)
+            if (Velocity.X == 0 && Velocity.Y == 0)
             {
                 Image.IsActive = false;
             }
