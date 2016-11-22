@@ -13,13 +13,12 @@ namespace EternalEvolution
     {
         int count = 0;
         int attackCount = 0;
-        char direction = 'd';
         bool attacking = false;
         public bool playerInRange = false;
         public Rectangle agroBox;
         public int victimX;
         public int victimY;
-        
+
 
         public void LoadContent()
         {
@@ -35,19 +34,22 @@ namespace EternalEvolution
         public void Update(GameTime gameTime)
         {
             Image.IsActive = true;
-            
-            if (playerInRange)
-            {
-                ToAttack(gameTime);
-            }
-            else
-            {
-                Patrol(gameTime);
-            }
 
-            if (Velocity.X == 0 && Velocity.Y == 0)
+            if (ableToMove)
             {
-                Image.IsActive = false;
+                if (playerInRange)
+                {
+                    ToAttack(gameTime);
+                }
+                else
+                {
+                    Patrol(gameTime);
+                }
+
+                if (Velocity.X == 0 && Velocity.Y == 0)
+                {
+                    Image.IsActive = false;
+                }
             }
 
             Image.Update(gameTime);
@@ -113,7 +115,7 @@ namespace EternalEvolution
 
         private void Move(char direction, GameTime gameTime)
         {
-            
+
             if (direction.Equals('d'))
             {
                 Velocity.X = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;

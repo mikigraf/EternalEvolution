@@ -32,53 +32,57 @@ namespace EternalEvolution
         {
             Image.IsActive = true;
 
-            if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
+            if (ableToMove)
             {
-                MoveSpeed = 200;
-            } else
-            {
-                MoveSpeed = 100;
-            }
-
-            if (Velocity.X == 0)
-            {
-                if (Keyboard.GetState().IsKeyDown(Keys.Down) || Keyboard.GetState().IsKeyDown(Keys.S))
+                if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
                 {
-                    Velocity.Y = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    Image.SpriteSheetEffect.CurrentFrame.Y = 0;
-                }
-                else if (Keyboard.GetState().IsKeyDown(Keys.Up) || Keyboard.GetState().IsKeyDown(Keys.W))
-                {
-                    Velocity.Y = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    Image.SpriteSheetEffect.CurrentFrame.Y = 3;
+                    MoveSpeed = 200;
                 }
                 else
                 {
-                    Velocity.Y = 0;
+                    MoveSpeed = 100;
                 }
-            }
 
-            if (Velocity.Y == 0)
-            {
-                if (Keyboard.GetState().IsKeyDown(Keys.Right) || Keyboard.GetState().IsKeyDown(Keys.D))
+                if (Velocity.X == 0)
                 {
-                    Velocity.X = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    Image.SpriteSheetEffect.CurrentFrame.Y = 2;
+                    if (Keyboard.GetState().IsKeyDown(Keys.Down) || Keyboard.GetState().IsKeyDown(Keys.S))
+                    {
+                        Velocity.Y = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                        Image.SpriteSheetEffect.CurrentFrame.Y = 0;
+                    }
+                    else if (Keyboard.GetState().IsKeyDown(Keys.Up) || Keyboard.GetState().IsKeyDown(Keys.W))
+                    {
+                        Velocity.Y = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                        Image.SpriteSheetEffect.CurrentFrame.Y = 3;
+                    }
+                    else
+                    {
+                        Velocity.Y = 0;
+                    }
                 }
-                else if (Keyboard.GetState().IsKeyDown(Keys.Left) || Keyboard.GetState().IsKeyDown(Keys.A))
-                {
-                    Velocity.X = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    Image.SpriteSheetEffect.CurrentFrame.Y = 1;
-                }
-                else
-                {
-                    Velocity.X = 0;
-                }
-            }
 
-            if (Velocity.X == 0 && Velocity.Y == 0)
-            {
-                Image.IsActive = false;
+                if (Velocity.Y == 0)
+                {
+                    if (Keyboard.GetState().IsKeyDown(Keys.Right) || Keyboard.GetState().IsKeyDown(Keys.D))
+                    {
+                        Velocity.X = MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                        Image.SpriteSheetEffect.CurrentFrame.Y = 2;
+                    }
+                    else if (Keyboard.GetState().IsKeyDown(Keys.Left) || Keyboard.GetState().IsKeyDown(Keys.A))
+                    {
+                        Velocity.X = -MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                        Image.SpriteSheetEffect.CurrentFrame.Y = 1;
+                    }
+                    else
+                    {
+                        Velocity.X = 0;
+                    }
+                }
+
+                if (Velocity.X == 0 && Velocity.Y == 0)
+                {
+                    Image.IsActive = false;
+                }
             }
 
             Image.Update(gameTime);

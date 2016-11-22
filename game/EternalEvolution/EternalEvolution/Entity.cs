@@ -17,6 +17,8 @@ namespace EternalEvolution
         public int HP;
         public Rectangle hitBox;
         public Vector2 center;
+        public bool ableToMove = true;
+        public char direction = 'd';
 
         public void LoadContent()
         {
@@ -44,6 +46,27 @@ namespace EternalEvolution
         public void Draw(SpriteBatch spriteBatch)
         {
             Image.Draw(spriteBatch);
+        }
+
+        public bool MovesToPosition(int posX, int posY)
+        {
+            if (posX < center.X && direction == 'a')
+            {
+                return true;
+            }
+            if (posX > center.X && direction == 'd')
+            {
+                return true;
+            }
+            if (posY < center.Y && direction == 'w')
+            {
+                return true;
+            }
+            if (posY > center.Y && direction == 's')
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
