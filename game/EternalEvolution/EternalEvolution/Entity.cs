@@ -52,18 +52,22 @@ namespace EternalEvolution
         {
             if (posX < center.X && direction == 'a')
             {
+                //Console.WriteLine("a");
                 return true;
             }
             if (posX > center.X && direction == 'd')
             {
+                //Console.WriteLine("d");
                 return true;
             }
             if (posY < center.Y && direction == 'w')
             {
+                //Console.WriteLine("w");
                 return true;
             }
             if (posY > center.Y && direction == 's')
             {
+                //Console.WriteLine("s");
                 return true;
             }
             return false;

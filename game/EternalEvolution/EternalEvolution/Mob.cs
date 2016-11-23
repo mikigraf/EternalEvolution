@@ -45,12 +45,17 @@ namespace EternalEvolution
                 {
                     Patrol(gameTime);
                 }
-
-                if (Velocity.X == 0 && Velocity.Y == 0)
-                {
-                    Image.IsActive = false;
-                }
             }
+            else
+            {
+                TurnRight(direction, gameTime);
+            }
+
+            if (Velocity.X == 0 && Velocity.Y == 0)
+            {
+                Image.IsActive = false;
+            }
+
 
             Image.Update(gameTime);
             Image.Position += Velocity;

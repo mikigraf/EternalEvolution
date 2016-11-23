@@ -78,12 +78,13 @@ namespace EternalEvolution
                         Velocity.X = 0;
                     }
                 }
-
-                if (Velocity.X == 0 && Velocity.Y == 0)
-                {
-                    Image.IsActive = false;
-                }
             }
+
+            if (Velocity.X == 0 && Velocity.Y == 0)
+            {
+                Image.IsActive = false;
+            }
+
 
             Image.Update(gameTime);
             Image.Position += Velocity;
