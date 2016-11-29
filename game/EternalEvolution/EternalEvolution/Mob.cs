@@ -48,14 +48,15 @@ namespace EternalEvolution
             }
             else
             {
-                TurnRight(direction, gameTime);
+                //Console.Write("Path is bloked. turn right, old direction: " + direction);
+                TurnRight(gameTime);
+                //Console.WriteLine(", new drirection: " + direction);
             }
 
             if (Velocity.X == 0 && Velocity.Y == 0)
             {
                 Image.IsActive = false;
             }
-
 
             Image.Update(gameTime);
             Image.Position += Velocity;
@@ -70,52 +71,50 @@ namespace EternalEvolution
             Image.Draw(spriteBatch);
         }
 
-        private char TurnRight(char direction, GameTime gameTime)
+        private void TurnRight(GameTime gameTime)
         {
             Velocity.X = 0;
             Velocity.Y = 0;
 
             if (direction.Equals('d'))
             {
-                return 's';
+                direction = 's';
             }
             else if (direction.Equals('s'))
             {
-                return 'a';
+                direction = 'a';
             }
             else if (direction.Equals('a'))
             {
-                return 'w';
+                direction = 'w';
             }
             else if (direction.Equals('w'))
             {
-                return 'd';
+                direction = 'd';
             }
-            return 'n';
         }
 
-        private char TurnLeft(char direction, GameTime gameTime)
+        private void TurnLeft(GameTime gameTime)
         {
             Velocity.X = 0;
             Velocity.Y = 0;
 
             if (direction.Equals('d'))
             {
-                return 'w';
+                direction = 'w';
             }
             else if (direction.Equals('s'))
             {
-                return 'd';
+                direction = 'd';
             }
             else if (direction.Equals('a'))
             {
-                return 's';
+                direction = 's';
             }
             else if (direction.Equals('w'))
             {
-                return 'a';
+                direction = 'a';
             }
-            return 'n';
         }
 
         private void Move(char direction, GameTime gameTime)
@@ -152,7 +151,7 @@ namespace EternalEvolution
             }
             else
             {
-                direction = TurnRight(direction, gameTime);
+                TurnRight(gameTime);
                 count = 0;
             }
         }

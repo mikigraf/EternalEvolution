@@ -63,9 +63,17 @@ namespace EternalEvolution
                     e1.ableToMove = true;
                     if (e1.hitBox.Intersects(tileRect) && e1.MovesToPosition((int)tileRect.Center.X, (int)tileRect.Center.Y))
                     {
-                        PreventCollision(e1.hitBox, tileRect, e1);
+                        //PreventCollision(e1.hitBox, tileRect, e1);
                         //hasToPreventMovement[i] = true;
                         //Console.WriteLine("collision with Tile prevented");
+                        if (e1.GetType() == typeof(Mob))
+                        {
+                            hasToPreventMovement[i] = true;
+                        }
+                        else
+                        {
+                            PreventCollision(e1.hitBox, tileRect, e1);
+                        }
                     }
 
                     foreach (Entity e2 in entityList)
@@ -97,7 +105,7 @@ namespace EternalEvolution
                         e1.ableToMove = false;
                         e1.Velocity = Vector2.Zero;
                         hasToPreventMovement[i] = false;
-                        Console.WriteLine(i + ": " + e1.ableToMove.ToString());
+                        //Console.WriteLine(i + ": " + e1.ableToMove.ToString());
                     }
                     i++;
                     
