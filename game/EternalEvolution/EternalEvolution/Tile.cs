@@ -82,21 +82,11 @@ namespace EternalEvolution
                         {
                             if (e1.hitBox.Intersects(e2.hitBox) && e1.MovesToPosition((int)e2.center.X, (int)e2.center.Y))
                             {
-                                //Console.WriteLine(e1.GetType());
-                                //PreventCollision(e1.hitBox, e2.hitBox, e1, e2);
-                                //PreventCollision(e2.hitBox, e1.hitBox, e2, e1);
-                                //Console.WriteLine("collision with Tile prevented");
-                                //PreventCollision(e1.hitBox, e2.hitBox, e1);
-                                //PreventCollision(e2.hitBox, e1.hitBox, e2);
                                 hasToPreventMovement[i] = true;
-                                //e1.ableToMove = false;
-                                //e2.ableToMove = false;
                             }
                             else
                             {
-                                //hasToPreventMovement[i] = false;
-                                //e1.ableToMove = true;
-                                //e2.ableToMove = true;
+                                
                             }
                         }
                     }
@@ -105,7 +95,6 @@ namespace EternalEvolution
                         e1.ableToMove = false;
                         e1.Velocity = Vector2.Zero;
                         hasToPreventMovement[i] = false;
-                        //Console.WriteLine(i + ": " + e1.ableToMove.ToString());
                     }
                     i++;
                     
