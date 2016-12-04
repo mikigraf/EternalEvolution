@@ -32,6 +32,37 @@ namespace EternalEvolution
         {
             Image.IsActive = true;
 
+            if (isHit) {
+                //wenn getroffen
+                if (directionToKnockback.Equals('d')) {
+                    Image.Update(gameTime);
+                    Image.Position.X += 10;
+                    hitBox = new Rectangle((int) Image.Position.X, (int) Image.Position.Y, (int) Image.SourceRect.Width, (int) Image.SourceRect.Height);
+                    center.X = hitBox.X + Image.SourceRect.Width / 2;
+                    center.Y = hitBox.Y + Image.SourceRect.Height / 2;
+                } else if (directionToKnockback.Equals('s')) {
+                    Image.Update(gameTime);
+                    Image.Position.Y += 10;
+                    hitBox = new Rectangle((int) Image.Position.X, (int) Image.Position.Y, (int) Image.SourceRect.Width, (int) Image.SourceRect.Height);
+                    center.X = hitBox.X + Image.SourceRect.Width / 2;
+                    center.Y = hitBox.Y + Image.SourceRect.Height / 2;
+                } else if (directionToKnockback.Equals('a')) {
+                    Image.Update(gameTime);
+                    Image.Position.X -= 10;
+                    hitBox = new Rectangle((int) Image.Position.X, (int) Image.Position.Y, (int) Image.SourceRect.Width, (int) Image.SourceRect.Height);
+                    center.X = hitBox.X + Image.SourceRect.Width / 2;
+                    center.Y = hitBox.Y + Image.SourceRect.Height / 2;
+                } else if (directionToKnockback.Equals('w')) {
+                    Image.Update(gameTime);
+                    Image.Position.Y -= 10;
+                    hitBox = new Rectangle((int) Image.Position.X, (int) Image.Position.Y, (int) Image.SourceRect.Width, (int) Image.SourceRect.Height);
+                    center.X = hitBox.X + Image.SourceRect.Width / 2;
+                    center.Y = hitBox.Y + Image.SourceRect.Height / 2;
+                }
+                isHit = false;
+                return;
+            }
+
             if (ableToMove)
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
@@ -78,6 +109,7 @@ namespace EternalEvolution
                         Velocity.X = 0;
                     }
                 }
+
             }
 
             if (Velocity.X == 0 && Velocity.Y == 0)

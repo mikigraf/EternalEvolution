@@ -19,6 +19,8 @@ namespace EternalEvolution
         public Vector2 center;
         public bool ableToMove = true;
         public char direction = 'd';
+        public bool isHit;
+        public char directionToKnockback;
 
         public void LoadContent()
         {
