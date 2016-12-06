@@ -7,7 +7,6 @@ namespace EternalEvolution
 {
     public class Tile
     {
-
         Vector2 position;
         Rectangle sourceRect;
         string state;
@@ -54,7 +53,6 @@ namespace EternalEvolution
                 //Mobs
                 entityList.AddRange(mobs);
 
-                //Console.WriteLine(entityList.Count);
                 int i = 0;
 
                 foreach (Entity e1 in entityList)
@@ -92,12 +90,20 @@ namespace EternalEvolution
                                     Mob m = (Mob)e1;
                                     m.victim = player;
                                     m.attackPlayer = true;
+                                    if (m.positionRelativeTo((int)player.center.X, (int)player.center.Y) == player.direction)
+                                    {
+                                        player.mobInFocus = m;
+                                    }
                                 }
                                 else if (e2.GetType() == typeof(Mob) && e1.GetType() == typeof(Player))
                                 {
                                     Mob m = (Mob)e2;
                                     m.victim = player;
                                     m.attackPlayer = true;
+                                    if (m.positionRelativeTo((int)player.center.X, (int)player.center.Y) == player.direction)
+                                    {
+                                        player.mobInFocus = m;
+                                    }
                                 }
                                 e1.ableToMove = false;
 
@@ -115,10 +121,6 @@ namespace EternalEvolution
                                         mob.victimX = (int)player.center.X;
                                         mob.victimY = (int)player.center.Y;
                                     }
-                                    /*else if (!player.hitBox.Intersects(mob.agroBox))
-                                    {
-                                        mob.playerInRange = false;
-                                    }*/
                                 }
                                 else if (e2.GetType() == typeof(Mob) && e1.GetType() == typeof(Player))
                                 {
@@ -130,10 +132,6 @@ namespace EternalEvolution
                                         mob.victimX = (int)player.center.X;
                                         mob.victimY = (int)player.center.Y;
                                     }
-                                    /*else if (!player.hitBox.Intersects(mob.agroBox))
-                                    {
-                                        mob.playerInRange = false;
-                                    }*/
                                 }
                             }
                         }
@@ -141,35 +139,6 @@ namespace EternalEvolution
                     i++;
 
                 }
-                //Console.WriteLine("_______________________");
-
-                /*foreach (Entity e1 in entityList)
-                {
-                    if (e1.hitBox.Intersects(tileRect))
-                    {
-                        PreventCollision(e1.hitBox, tileRect, e1);
-                    }
-                }
-
-                foreach (Mob mob in mobs)
-                {
-                    if (player.hitBox.Intersects(mob.hitBox))
-                    {
-                        PreventCollision(player.hitBox, mob.hitBox, player, mob);
-                        PreventCollision(mob.hitBox, player.hitBox, mob, player);
-                    }
-                    else if (player.hitBox.Intersects(mob.agroBox))
-                    {
-                        mob.playerInRange = true;
-                        mob.victimX = (int)player.center.X;
-                        mob.victimY = (int)player.center.Y;
-                        //Console.WriteLine("position: ", player.center.X, ", ", player.center.Y);
-                    }
-                    else if (!player.hitBox.Intersects(mob.agroBox))
-                    {
-                        mob.playerInRange = false;
-                    }
-                }*/
             }
         }
 

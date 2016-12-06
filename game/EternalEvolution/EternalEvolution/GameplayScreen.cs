@@ -68,13 +68,16 @@ namespace EternalEvolution
             base.Draw(spriteBatch);
             // Order to the layers. Player gets drawn on top of the map, not otherwise.
             map.Draw(spriteBatch,"Underlay");
+            int i = 0;
             foreach (Mob mob in mobs)
             {
                 mob.Draw(spriteBatch);
+                spriteBatch.DrawString(font, "Mob " + i + ": HP: " + mob.HP, new Vector2(0, 50 * i), Color.Yellow);
+                i++;
             }
             player.Draw(spriteBatch);
             map.Draw(spriteBatch, "Overlay");
-            spriteBatch.DrawString(font, "HP: " + player.HP, new Vector2(200, 200), Color.Yellow);
+            spriteBatch.DrawString(font, "Player: HP: " + player.HP, new Vector2(0, 50 * i), Color.Yellow);
         }
     }
 }

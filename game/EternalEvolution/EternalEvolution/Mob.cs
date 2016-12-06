@@ -11,8 +11,6 @@ namespace EternalEvolution {
     public class Mob : Entity {
         int count = 0;
         int attackCount = 0;
-        public int cooldown = 0;
-        int damage = 10;
         int agroRange = 50;
         bool attacking = false;
         public bool attackPlayer;
@@ -25,6 +23,8 @@ namespace EternalEvolution {
 
         public void LoadContent() {
             base.LoadContent();
+            damage = 10;
+            HP = 50;
             agroBox = new Rectangle((int) center.X - agroRange, (int)center.Y - agroRange, agroRange * 2, agroRange * 2);
         }
 
@@ -34,6 +34,12 @@ namespace EternalEvolution {
 
         public void Update(GameTime gameTime) {
             Image.IsActive = true;
+
+            if (HP <= 0)
+            {
+                Console.WriteLine("Monster besiegt");
+                //UnloadContent();
+            }
 
             if (isHit) {
                 //wenn getroffen
@@ -196,6 +202,30 @@ namespace EternalEvolution {
                 dir = 'w';
             }
             p.directionToKnockback = dir;
+        }
+
+        public char positionRelativeTo(int x, int y)
+        {
+            if (x < hitBox.X)
+            {
+                return 'a';
+            }
+            else if (x > hitBox.X + hitBox.Width)
+            {
+                return 'd';
+            }
+            else if (x >= hitBox.X && x <= hitBox.X + hitBox.Width)
+            {
+                if (y < hitBox.Y)
+                {
+                    return 'w';
+                }
+                else if (y > hitBox.Y + hitBox.Y + hitBox.Height)
+                {
+                    return 's';
+                }
+            }
+            return 'n';
         }
     }
 }

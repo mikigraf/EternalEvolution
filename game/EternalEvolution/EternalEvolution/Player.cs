@@ -12,10 +12,13 @@ namespace EternalEvolution
 {
     public class Player : Entity
     {
+        public Mob mobInFocus;
+
         public Player()
         {
             Velocity = Vector2.Zero;
-            HP = 99;
+            HP = 100;
+            damage = 10;
         }
 
         public void LoadContent()
@@ -31,6 +34,12 @@ namespace EternalEvolution
         public void Update(GameTime gameTime)
         {
             Image.IsActive = true;
+
+            if (HP <= 0)
+            {
+                Console.WriteLine("SPieler gestorben");
+                //UnloadContent();
+            }
 
             if (isHit) {
                 //wenn getroffen
@@ -63,6 +72,11 @@ namespace EternalEvolution
                 return;
             }
 
+            if (cooldown > 0)
+            {
+                cooldown--;
+            }
+
             if (ableToMove)
             {
                 if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
@@ -72,6 +86,22 @@ namespace EternalEvolution
                 else
                 {
                     MoveSpeed = 100;
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.Space))
+                {
+                    Console.WriteLine(mobInFocus);
+                    if (mobInFocus != null)
+                    {
+                        if (cooldown == 0)
+                        {
+                            if (hitBox.Intersects(mobInFocus.hitBox))
+                            {
+                                mobInFocus.HP -= damage;
+                                cooldown = 120;
+                            }
+                        }
+                    }
                 }
 
                 if (Velocity.X == 0)

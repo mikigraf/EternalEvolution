@@ -17,10 +17,12 @@ namespace EternalEvolution
         public int HP;
         public Rectangle hitBox;
         public Vector2 center;
+        public int cooldown;
         public bool ableToMove = true;
         public char direction = 'd';
         public bool isHit;
         public char directionToKnockback;
+        public int damage;
 
         public void LoadContent()
         {
