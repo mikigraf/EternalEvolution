@@ -13,6 +13,7 @@ namespace EternalEvolution {
         int attackCount = 0;
         public int cooldown = 0;
         int damage = 10;
+        int agroRange = 50;
         bool attacking = false;
         public bool attackPlayer;
         public bool playerInRange = false;
@@ -24,7 +25,7 @@ namespace EternalEvolution {
 
         public void LoadContent() {
             base.LoadContent();
-            agroBox = new Rectangle((int) Image.Position.X - 200, (int) Image.Position.Y - 200, (int) Image.SourceRect.Width + 200, (int) Image.SourceRect.Height + 200);
+            agroBox = new Rectangle((int) center.X - agroRange, (int)center.Y - agroRange, agroRange * 2, agroRange * 2);
         }
 
         public void UnloadContent() {
@@ -41,6 +42,9 @@ namespace EternalEvolution {
             if (cooldown > 0) {
                 cooldown--;
             }
+
+            Console.WriteLine(playerInRange);
+
 
             if (attackPlayer) {
                 if (cooldown == 0) {
@@ -63,7 +67,7 @@ namespace EternalEvolution {
             Image.Update(gameTime);
             Image.Position += Velocity;
             hitBox = new Rectangle((int) Image.Position.X, (int) Image.Position.Y, (int) Image.SourceRect.Width, (int) Image.SourceRect.Height);
-            agroBox = new Rectangle((int) Image.Position.X - 200, (int) Image.Position.Y - 200, (int) Image.SourceRect.Width + 200, (int) Image.SourceRect.Height + 200);
+            agroBox = new Rectangle((int)center.X - agroRange, (int)center.Y - agroRange, agroRange * 2, agroRange * 2);
             center.X = hitBox.X + Image.SourceRect.Width / 2;
             center.Y = hitBox.Y + Image.SourceRect.Height / 2;
         }
@@ -175,7 +179,7 @@ namespace EternalEvolution {
         }
 
         public void Attack(Player p) {
-            Console.WriteLine("Attacking");
+            //Console.WriteLine("Attacking");
             p.HP -= damage;
             attackPlayer = false;
             cooldown = 120;
