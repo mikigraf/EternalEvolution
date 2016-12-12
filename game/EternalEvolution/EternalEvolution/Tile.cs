@@ -57,6 +57,21 @@ namespace EternalEvolution
 
                 foreach (Entity e1 in entityList)
                 {
+                    if (e1.HP <= 0)
+                    {
+                        continue;
+                        if (e1.GetType() == typeof(Mob))
+                        {
+                            Mob m = (Mob) e1;
+                            m.UnloadContent();
+                            mobs.Remove(m);
+                        } else if (e1.GetType() == typeof(Player))
+                        {
+                            Console.WriteLine("GAME OVER");
+                            //e1.UnloadContent();
+                            
+                        }
+                    }
                     e1.ableToMove = true;
                     if (e1.GetType() == typeof(Mob))
                     {

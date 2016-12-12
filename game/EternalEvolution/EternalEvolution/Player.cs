@@ -72,10 +72,7 @@ namespace EternalEvolution
                 return;
             }
 
-            if (cooldown > 0)
-            {
-                cooldown--;
-            }
+            Console.WriteLine(ableToMove);
 
             if (ableToMove)
             {
@@ -147,6 +144,10 @@ namespace EternalEvolution
                 Image.IsActive = false;
             }
 
+            if (cooldown > 0)
+            {
+                cooldown--;
+            }
 
             Image.Update(gameTime);
             Image.Position += Velocity;
