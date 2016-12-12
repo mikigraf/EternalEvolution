@@ -34,24 +34,11 @@ namespace EternalEvolution {
 
         public void Update(GameTime gameTime) {
             Image.IsActive = true;
-
-            if (HP <= 0)
-            {
-                Console.WriteLine("Monster besiegt");
-                //UnloadContent();
-            }
-
+            
             if (isHit) {
                 //wenn getroffen
             }
-
-            if (cooldown > 0) {
-                cooldown--;
-            }
-
-            Console.WriteLine(playerInRange);
-
-
+            
             if (attackPlayer) {
                 if (cooldown == 0) {
                     Attack(victim);
@@ -68,6 +55,11 @@ namespace EternalEvolution {
 
             if (Velocity.X == 0 && Velocity.Y == 0) {
                 Image.IsActive = false;
+            }
+
+            if (cooldown > 0)
+            {
+                cooldown--;
             }
 
             Image.Update(gameTime);
