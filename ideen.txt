@@ -2,47 +2,43 @@ Alles mit * ist Nice-to-Have
 
 Fights:
 Nahkampf
-NICE TO HAVE:
-	*Buffs / Skills
-	*Fernkampf
+*Buffs / Skills
+*Fernkampf
 
 Setting:
 Mittlealter / Fantasy / Magie
 
 Plot:
-In einer Burg ist ein Portal erschienen. Der KÃ¶nig (StÃ¤rkster von allen) ist mit seiner AusrÃ¼stung in die Burg gegangen, um das
-Portal zu schlieÃŸen. Auf dem Weg zum Portal hat er Teile seiner AusrÃ¼stung verloren und war nciht stark genug, um das Portal zu schlieÃŸen.
-Der Protagonist geht in den Dungeon und bekommt Ebene fÃ¼r Ebene Teile der AusrÃ¼stung. Hat er am Ende alle AusrÃ¼stungsteile kann er das 
-Portal schlieÃŸen. (AusrÃ¼stung: RÃ¼stung, Waffe, Helm / Krone, Talisman, Schuhe)
+In einer Burg ist ein Portal erschienen. Der König (Stärkster von allen) ist mit seiner Ausrüstung in die Burg gegangen, um das
+Portal zu schließen. Auf dem Weg zum Portal hat er Teile seiner Ausrüstung verloren und war nciht stark genug, um das Portal zu schließen.
+Der Protagonist geht in den Dungeon und bekommt Ebene für Ebene Teile der Ausrüstung. Hat er am Ende alle Ausrüstungsteile kann er das 
+Portal schließen. (Ausrüstung: Rüstung, Waffe, Helm / Krone, Talisman, Schuhe)
 
-Ãœberlegungen:
+*Skills stärker, je öfter eingesetzt
+*Skills / Ausrüstung durch Drops boostbar
+
+
+Überlegungen:
 - Bewegung:
 	- Sieht man die ganze Map / Raum und bewegt sich darin
+	- Sieht man einen Ausschnitt, der sich bewegt sobald man mit der Bewegung bis zu einer bestimmten Stelle gekommen ist
+	- Sieht man einen Ausschnitt der sich bewegt wenn man sich bewegt
 - Mapaufbau:
 	- Senkrechte Sicht von oben (Bewegungen: N, S, O, W)
+	- Waagerechte Sicht (vgl. Mario, Bewegungen: Vorne, Hinten, Springen)
 - Loot:
-	- Lootkisten
-	- Drops
+	- nur Lootkisten
+	- nur Drops
+	- Kombinationen
 - GUI-Design:
 	- HP
-	- Inventory / AusrÃ¼stung
-	- Positionierung der HP-Leiste der Gegner (nur aktueller Gegner in einem Feld / Ã¼ber jedem Gegner)
-	NICE TO HAVE:
+	- Inventory / Ausrüstung
 	- *Skill liste
 	- *Minimap
-	
-NICE TO HAVE: (ONLY IF WE IMPLEMENT SKILLS):
-	*Skills stÃ¤rker, je Ã¶fter eingesetzt
-	*Skills / AusrÃ¼stung durch Drops boostbar
+	- Positionierung der HP-Leiste der Gegner (nur aktueller Gegner in einem Feld / über jedem Gegner)
 
 
 
-MAP: 
-random generated
-array generation with constraints
-put values into the array
-genreate textures according to the array
 
 
 
-:

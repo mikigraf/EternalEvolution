@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <Axis>Y</Axis>
+  <Item>
+    <LinkType>Menu</LinkType>
+    <LinkID>Load/TitleMenu.xml</LinkID>
+    <Image>
+      <Text>Graphics</Text>
+    </Image>
+  </Item>
+
+  <Item>
+    <Image>
+      <Text>Audio</Text>
+    </Image>
+  </Item>
+
+  <Item>
+    <Image>
+      <Text>Keyboard</Text>
+    </Image>
+  </Item>
+
+  <Item>
+    <Image>
+      <Text>Mouse</Text>
+    </Image>
+  </Item>
+
+</Menu>
